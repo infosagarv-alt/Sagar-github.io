@@ -158,7 +158,7 @@ flowchart LR
 
 ---
 
-## 🧭 Engineering principles
+##  Engineering principles
 
 - **Structured inputs:** use defined specifications instead of unrestricted generated code wherever practical.
 - **Deterministic execution:** keep calculations and critical behaviour in explicit, testable logic.
