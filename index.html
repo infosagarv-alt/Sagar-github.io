@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>E. V. Sagar — AI-Powered EdTech Products</title>
+<meta name="description" content="Portfolio of E. V. Sagar: AI-powered EdTech products, automation and operations.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ffffff; --bg-alt:#f4f5f7; --ink:#1d2129; --muted:#5b6270; --line:#e3e6eb;
+  --accent:#3d5afe; --accent-ink:#ffffff; --chip:#eef1ff; --chip-ink:#2a3fbf;
+  --dark:#14171c; --dark-ink:#eef0f3;
+  --serif:"Fraunces",Georgia,serif; --sans:"Inter",system-ui,sans-serif; --mono:"JetBrains Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root{ --bg:#111318; --bg-alt:#181b22; --ink:#e8eaee; --muted:#9aa1ad; --line:#2a2f38;
+    --accent:#7b8cff; --accent-ink:#0d0f14; --chip:#1f2540; --chip-ink:#b9c3ff; --dark:#0b0d11; --dark-ink:#e8eaee; }
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:16px/1.65 var(--sans);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.12;letter-spacing:-.01em}
+.btn{display:inline-block;padding:.8em 1.6em;border:2px solid currentColor;border-radius:4px;font:600 .78rem/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;text-decoration:none;transition:.2s}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn:hover{transform:translateY(-1px);opacity:.9}
+.kicker{font:500 .72rem/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+
+/* ---------- Banner (Story-style split) ---------- */
+.banner{display:grid;grid-template-columns:1fr 1fr;min-height:100vh;background:var(--bg)}
+.banner .content{display:flex;flex-direction:column;justify-content:center;padding:8vh 6vw;gap:22px}
+.banner h1{font-size:clamp(2.6rem,5.6vw,4.6rem)}
+.banner .tag{font-size:1.15rem;color:var(--muted);max-width:34ch}
+.banner .stats{display:flex;flex-wrap:wrap;gap:28px;margin-top:6px}
+.banner .stats b{display:block;font:600 1.7rem/1 var(--serif);color:var(--ink)}
+.banner .stats span{font-size:.8rem;color:var(--muted)}
+.banner .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
+.banner .art{position:relative;overflow:hidden;background:linear-gradient(135deg,#1b2a6b,#3d5afe 55%,#7c4dff)}
+.banner .art img{width:100%;height:100%;object-fit:cover}
+.art-grid{position:absolute;inset:0;display:grid;place-content:center;gap:14px;padding:8%}
+.art-grid .row{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:center}
+.node{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);color:#fff;padding:.55em .9em;border-radius:8px;font:500 .78rem/1.2 var(--mono);backdrop-filter:blur(4px)}
+.arrow{color:rgba(255,255,255,.7);font-family:var(--mono)}
+
+/* ---------- Nav ---------- */
+nav{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:58px}
+nav .brand{font:600 1.05rem var(--serif);text-decoration:none}
+nav ul{display:flex;gap:26px;list-style:none}
+nav ul a{text-decoration:none;font-size:.85rem;color:var(--muted)}
+nav ul a:hover{color:var(--ink)}
+
+/* ---------- Spotlights ---------- */
+.spot{display:grid;grid-template-columns:1fr 1fr;min-height:78vh;border-bottom:1px solid var(--line)}
+.spot:nth-of-type(even) .media{order:2}
+.spot .media{position:relative;overflow:hidden;min-height:340px}
+.spot .media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.spot .media.contain{background:#f6f7fb}
+.spot .media.contain img{object-fit:contain;padding:4%}
+.spot .content{display:flex;flex-direction:column;justify-content:center;gap:16px;padding:9vh 6vw}
+.spot h2{font-size:clamp(1.9rem,3.4vw,2.7rem)}
+.spot p{color:var(--muted);max-width:52ch}
+.spot ul{list-style:none;display:flex;flex-direction:column;gap:9px;max-width:54ch}
+.spot li{padding-left:22px;position:relative;font-size:.95rem}
+.spot li::before{content:"";position:absolute;left:0;top:.62em;width:9px;height:9px;border-radius:2px;background:var(--accent)}
+.tags{display:flex;flex-wrap:wrap;gap:7px}
+.tags span{background:var(--chip);color:var(--chip-ink);font:500 .72rem/1 var(--mono);padding:.5em .7em;border-radius:4px}
+.g1{background:linear-gradient(135deg,#0f3d3e,#14808a 60%,#4fd1c5)}
+.g2{background:linear-gradient(135deg,#3a1c71,#7c4dff 55%,#d76d77)}
+.g3{background:linear-gradient(135deg,#1e3c72,#2a5298 55%,#5aa9ff)}
+.g4{background:linear-gradient(135deg,#232526,#414345 50%,#ff8a3d)}
+.g5{background:linear-gradient(135deg,#134e5e,#3a7d44 60%,#a8e063)}
+
+/* ---------- Sections ---------- */
+section.block{padding:96px 0}
+section.block.alt{background:var(--bg-alt)}
+.head{max-width:700px;margin:0 auto 52px;text-align:center;display:flex;flex-direction:column;gap:12px}
+.head h2{font-size:clamp(2rem,3.6vw,2.8rem)}
+.head p{color:var(--muted)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:26px;display:flex;flex-direction:column;gap:10px}
+.card h3{font-size:1.25rem}
+.card p{color:var(--muted);font-size:.93rem}
+.card .n{font:500 .75rem var(--mono);color:var(--accent)}
+
+/* ---------- Journey ---------- */
+.timeline{max-width:820px;margin:0 auto;position:relative;padding-left:34px}
+.timeline::before{content:"";position:absolute;left:8px;top:6px;bottom:6px;width:2px;background:var(--line)}
+.tl{position:relative;padding-bottom:38px}
+.tl::before{content:"";position:absolute;left:-32px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:3px solid var(--accent)}
+.tl .when{font:500 .75rem var(--mono);color:var(--accent);letter-spacing:.08em}
+.tl h3{font-size:1.3rem;margin:4px 0 2px}
+.tl .org{color:var(--muted);font-size:.92rem;margin-bottom:8px}
+.tl p{font-size:.95rem}
+
+/* ---------- Footer ---------- */
+footer{background:var(--dark);color:var(--dark-ink);padding:72px 0 40px;text-align:center}
+footer h2{font-size:2rem;margin-bottom:10px}
+footer p{color:#a7adb8}
+footer .links{display:flex;justify-content:center;gap:14px;margin:26px 0 40px;flex-wrap:wrap}
+footer .links a{display:inline-flex;align-items:center;gap:8px;padding:.7em 1.2em;border:1px solid #3a404b;border-radius:6px;text-decoration:none;font-size:.9rem}
+footer .links a:hover{border-color:#fff}
+footer small{color:#6f7682}
+
+@media (max-width:900px){
+  .banner,.spot{grid-template-columns:1fr;min-height:auto}
+  .banner .art{min-height:48vh;order:-1}
+  .spot:nth-of-type(even) .media{order:0}
+  .spot .media{min-height:46vh}
+  .cards{grid-template-columns:1fr}
+  nav ul{gap:16px}
+  nav ul li.hide-sm{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ BANNER ============ -->
+<header class="banner">
+  <div class="content">
+    <span class="kicker">AI-Powered EdTech Products</span>
+    <h1>E. V. Sagar</h1>
+    <p class="tag">I build educational technology products and automations with AI as my engineering partner, from interactive simulations to classroom-video tools.</p>
+    <div class="stats">
+      <div><b>13+</b><span>years in EdTech &amp; operations</span></div>
+      <div><b>40+</b><span>automation &amp; AI workflows</span></div>
+      <div><b>6</b><span>products shipped</span></div>
+    </div>
+    <div class="actions">
+      <a class="btn primary" href="#work">My Work</a>
+      <a class="btn" href="#contact">Contact</a>
+    </div>
+  </div>
+  <div class="art" aria-hidden="true">
+    <!-- Replace this whole block with <img src="images/banner.jpg" alt=""> to use a photo -->
+    <div class="art-grid">
+      <div class="row"><span class="node">Learning goal</span><span class="arrow">→</span><span class="node">AI plan</span></div>
+      <div class="row"><span class="arrow">↓</span></div>
+      <div class="row"><span class="node">Schema validation</span><span class="arrow">→</span><span class="node">Deterministic engine</span></div>
+      <div class="row"><span class="arrow">↓</span></div>
+      <div class="row"><span class="node">Video</span><span class="node">Simulation</span><span class="node">QA report</span></div>
+    </div>
+  </div>
+</header>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#">Sagar</a>
+    <ul>
+      <li><a href="#work">Work</a></li>
+      <li class="hide-sm"><a href="#principles">Principles</a></li>
+      <li><a href="#journey">Journey</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ============ SPOTLIGHTS ============ -->
+<main id="work">
+
+<section class="spot">
+  <div class="media g2">
+    <!-- Add a screenshot: <img src="images/video-engine.jpg" alt="Rendered explainer video frame"> -->
+    <div class="art-grid">
+      <div class="row"><span class="node">Lesson</span><span class="arrow">→</span><span class="node">AI storyboard</span><span class="arrow">→</span><span class="node">Typed scenes</span></div>
+      <div class="row"><span class="node">Validate</span><span class="arrow">→</span><span class="node">renderFrame → SVG</span><span class="arrow">→</span><span class="node">MP4</span></div>
+    </div>
+  </div>
+  <div class="content">
+    <span class="kicker">01 · Video generation</span>
+    <h2>AI Educational Video Engine</h2>
+    <p>Transforms lesson content into animated explainer videos for NCERT Grades 6–12.</p>
+    <ul>
+      <li>The AI writes a typed storyboard, never code or pixels. Deterministic TypeScript draws every frame.</li>
+      <li>15 scene types (geometry, physics, chemistry, biology, graphs, Venn diagrams, quizzes) and an 18-element doodle system.</li>
+      <li>Browser-free rendering at about 17 ms per frame with resvg-js, plus MathJax equations and about 150 automated tests.</li>
+    </ul>
+    <div class="tags"><span>TypeScript</span><span>SVG</span><span>resvg-js</span><span>MathJax</span><span>Blender</span></div>
+  </div>
+</section>
+
+<section class="spot">
+  <div class="media g3">
+    <!-- <img src="images/simlab.jpg" alt="Projectile motion simulation"> -->
+    <div class="art-grid">
+      <div class="row"><span class="node">Spec</span><span class="arrow">→</span><span class="node">Zod schema</span><span class="arrow">→</span><span class="node">Model + clock</span></div>
+      <div class="row"><span class="node">Interactions</span><span class="arrow">→</span><span class="node">SVG · SceneryStack · Three.js</span></div>
+    </div>
+  </div>
+  <div class="content">
+    <span class="kicker">02 · Interactive learning</span>
+    <h2>SimLab: Simulation Engine</h2>
+    <p>Educators describe a learning goal; SimLab builds an interactive simulation for Maths, Physics, Chemistry or Biology.</p>
+    <ul>
+      <li>Schema-driven definitions validated with Zod. The AI selects registered patterns and can't inject executable code.</li>
+      <li>A deterministic model and clock (play, pause, step, seek), separate from rendering.</li>
+      <li>Simulations include projectile motion, sound waves, refraction of light, circuits and electrostatics, with 20+ Vitest test files.</li>
+    </ul>
+    <div class="tags"><span>React 19</span><span>Zod</span><span>Three.js</span><span>SceneryStack</span><span>Vitest</span></div>
+  </div>
+</section>
+
+<section class="spot">
+  <div class="media contain">
+    <img src="images/class2clips-flow.jpg" alt="Class2Clips process flow: upload recording, transcribe, AI segmentation, review, render">
+  </div>
+  <div class="content">
+    <span class="kicker">03 · Classroom video</span>
+    <h2>Class2Clips</h2>
+    <p>Turns a long classroom recording into clean, concept-focused teaching videos.</p>
+    <ul>
+      <li>Offline transcription with whisper.cpp. The AI finds the real teaching segments and groups them by concept.</li>
+      <li>Every AI timestamp is bounded against the real video length. One model once returned 277 hours for a 96-minute class.</li>
+      <li>Teachers approve the segments, and FFmpeg renders the final video in a background job queue.</li>
+    </ul>
+    <div class="tags"><span>NestJS</span><span>React</span><span>BullMQ</span><span>Prisma</span><span>FFmpeg</span><span>whisper.cpp</span></div>
+  </div>
+</section>
+
+<section class="spot">
+  <div class="media g4">
+    <!-- <img src="images/qa-tool.jpg" alt="QA report screenshot"> -->
+    <div class="art-grid">
+      <div class="row"><span class="node">Received QP</span><span class="node">Ingested QP</span></div>
+      <div class="row"><span class="arrow">↓</span></div>
+      <div class="row"><span class="node">Text diff</span><span class="node">Visual match</span><span class="node">Duplicates</span></div>
+      <div class="row"><span class="node">Answer key</span><span class="node">Grammar</span><span class="node">AI 2nd opinion</span></div>
+    </div>
+  </div>
+  <div class="content">
+    <span class="kicker">04 · Exam QA automation</span>
+    <h2>Question Paper QA Tool</h2>
+    <p>Checks each exam paper against its online version, question by question and option by option.</p>
+    <ul>
+      <li>Character-level text diff, perceptual-hash figure matching, blur detection, duplicate and answer-key checks.</li>
+      <li>A local vision-AI second opinion, benchmarked on 34 real cases: 84.8% accuracy, advisory only.</li>
+      <li>Validated on 7 real papers and rolled out to the QA team. It runs offline on any laptop.</li>
+    </ul>
+    <div class="tags"><span>Python</span><span>Flask</span><span>PyMuPDF</span><span>RapidFuzz</span><span>Ollama</span></div>
+  </div>
+</section>
+
+<section class="spot">
+  <div class="media g5">
+    <!-- <img src="images/analytics.jpg" alt="Engagement dashboard"> -->
+    <div class="art-grid">
+      <div class="row"><span class="node">2.86 M rows</span><span class="arrow">→</span><span class="node">9.8 s</span></div>
+      <div class="row"><span class="node">546 MB CSV</span><span class="arrow">→</span><span class="node">59 MB Parquet</span></div>
+      <div class="row"><span class="node">Re-query in 0.02 s</span></div>
+    </div>
+  </div>
+  <div class="content">
+    <span class="kicker">05 · Analytics</span>
+    <h2>Engagement Analytics</h2>
+    <p>Turns daily exam-engagement data with millions of rows into dashboards and reports, on 8 GB office laptops.</p>
+    <ul>
+      <li>Shipped as a single-file Windows app that runs locally, so no data leaves the machine.</li>
+      <li>Polars, DuckDB and Parquet, held inside a 1.5 GB memory budget.</li>
+      <li>AI summaries are checked number by number against verified data before display.</li>
+    </ul>
+    <div class="tags"><span>Python</span><span>Polars</span><span>DuckDB</span><span>Parquet</span><span>PyInstaller</span></div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ MORE BUILDS ============ -->
+<section class="block alt">
+  <div class="wrap">
+    <div class="head">
+      <span class="kicker">More builds</span>
+      <h2>Smaller tools &amp; experiments</h2>
+    </div>
+    <div class="cards">
+      <div class="card"><span class="n">Operations</span><h3>Clearline</h3><p>A local app that turns five weekly call-centre exports into ready reports, with step-by-step installers for non-technical users.</p></div>
+      <div class="card"><span class="n">Physics · Class 9</span><h3>Work &amp; Power Lab</h3><p>A Canvas simulation with an animated cyclist, live W–F, W–d and P–t graphs, and self-checking NCERT activities.</p></div>
+      <div class="card"><span class="n">Research</span><h3>NCERT 3D Asset Catalog</h3><p>49 hand-verified, openly licensed 3D models mapped to the syllabus, with a gap analysis.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRINCIPLES ============ -->
+<section class="block" id="principles">
+  <div class="wrap">
+    <div class="head">
+      <span class="kicker">How I build</span>
+      <h2>Engineering principles</h2>
+      <p>Let the AI make decisions; let deterministic code produce the output.</p>
+    </div>
+    <div class="cards">
+      <div class="card"><span class="n">01</span><h3>Structured inputs</h3><p>Defined specifications instead of unrestricted generated code wherever practical.</p></div>
+      <div class="card"><span class="n">02</span><h3>Deterministic execution</h3><p>Calculations and critical behaviour stay in explicit, testable logic.</p></div>
+      <div class="card"><span class="n">03</span><h3>Validation first</h3><p>Invalid inputs and out-of-bounds model output are caught before rendering or execution.</p></div>
+      <div class="card"><span class="n">04</span><h3>Reusable architecture</h3><p>Shared components instead of isolated demos.</p></div>
+      <div class="card"><span class="n">05</span><h3>Test real outputs</h3><p>Check the actual frames, PDFs and numbers, not just that the code runs.</p></div>
+      <div class="card"><span class="n">06</span><h3>Benchmark the AI</h3><p>Measure accuracy on real cases before a model reaches users.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ JOURNEY ============ -->
+<section class="block alt" id="journey">
+  <div class="wrap">
+    <div class="head">
+      <span class="kicker">Experience</span>
+      <h2>My journey</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl">
+        <span class="when">2026</span>
+        <h3>AI-Powered EdTech Products</h3>
+        <div class="org">Builder, alongside operations leadership</div>
+        <p>Designed and shipped the products above with Claude, Claude Code, OpenAI Codex and ChatGPT as engineering partners.</p>
+      </div>
+      <div class="tl">
+        <span class="when">Feb 2022 – Present</span>
+        <h3>Senior Manager: Business Operations, Service Ops, IT Systems &amp; PMO</h3>
+        <div class="org">Greater Than Educational Technologies (GTET), Hyderabad</div>
+        <p>Built a unified service desk, a full PMO and 40+ automation and AI workflows across 41 departments and 2,000+ staff. Cut turnaround from about 40–45 minutes to 16, reduced escalations by about 30% and saved about ₹2 Cr a year.</p>
+      </div>
+      <div class="tl">
+        <span class="when">Feb 2019 – Jan 2022</span>
+        <h3>Manager: Product / Programme Operations</h3>
+        <div class="org">Nspira Management Services, Hyderabad</div>
+        <p>Led distributed product operations for 600+ learning hubs and the move from office to remote work. Improved retention to about 90% on an ₹80 Cr+ portfolio.</p>
+      </div>
+      <div class="tl">
+        <span class="when">2018 – 2019</span>
+        <h3>Lead: Key Accounts</h3>
+        <div class="org">GCF Education</div>
+        <p>Managed a ₹30 Cr institutional portfolio and cut partner complaints by about 40% through root-cause analysis.</p>
+      </div>
+      <div class="tl">
+        <span class="when">2009 – 2018</span>
+        <h3>MBA, Marketing &amp; Early Career</h3>
+        <div class="org">Osmania University · Nutrix Tech · UrbanPro</div>
+        <p>MBA in Marketing &amp; Strategy, then growth and educator-outreach roles. Certified in Lean Six Sigma Green Belt (KPMG) and Generative AI for Project Managers (PMI).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer id="contact">
+  <div class="wrap">
+    <h2>Let's build something</h2>
+    <p>Open to roles in AI solutions, EdTech product and automation.</p>
+    <div class="links">
+      <!-- Replace the # with your real links -->
+      <a href="https://www.linkedin.com/in/YOUR-LINKEDIN">LinkedIn</a>
+      <a href="https://github.com/YOUR-USERNAME">GitHub</a>
+      <a href="mailto:you@example.com">Email</a>
+    </div>
+    <small>© 2026 E. V. Sagar</small>
+  </div>
+</footer>
+
+</body>
+</html>
